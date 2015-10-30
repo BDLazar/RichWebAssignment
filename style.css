@@ -1,0 +1,294 @@
+/*each element has no margin padding or outline*/
+*, *:before, *:after
+{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*experience,skills,education,contact go to the right of the page
+#navbar
+{
+	float:right;
+}
+
+/*display all semantic elements as block*/
+article,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section 
+{
+  display: block;
+}
+
+/*back button*/
+.ghost-button
+{
+	float:right;
+	margin-bottom:15%;
+}
+
+/*background to white and text formatting */
+body 
+{ 
+	background: #fff;
+	color: #333333;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 1.2em;
+	font-weight: 200;
+	height: auto !important;
+	line-height: 1.6em;
+}
+
+/*first section padding so it falls below the navbar*/
+section:first-of-type 
+{ 
+	padding-top: 6em; 
+}
+
+/*images respond to screen resizing*/
+img
+{
+	max-width: 100%;
+}
+
+/*header navbar styling*/
+nav
+{
+	height: 4rem;
+	line-height: 4rem;
+	display: block;
+	width: 100%;
+	text-transform: uppercase;
+}
+
+/*navigation bar styling*/
+nav ul
+{
+	list-style-type: none;
+	margin: auto;
+}
+
+/*list items*/
+nav  ul  li
+{
+	display: inline-block;
+}
+
+/*list item links ie, navbar buttons, slightly transparent white*/
+nav ul  li a 
+{
+	display: block;
+	color: rgba(255,255,255,0.75);
+	padding: 0 1rem;
+	text-decoration: none;
+}
+
+/*change button background on hover except for the logo*/
+nav ul li:not([class="logo"]):hover
+{
+	background-color: rgba(0,0,0,.1);	
+}
+
+/*logo styling*/
+nav ul li.logo a 
+{
+	color: rgba(255,255,255,1);	
+	font-size: 1.15em;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	text-transform: none;
+}
+
+/*if on mobile reduce padding between buttons so they fit on portrait screen*/
+@media only screen and (max-width: 48rem)
+{
+	nav ul  li  a 
+	{
+		padding: 0 .5rem;
+	}
+}
+
+#experience
+{
+	padding-bottom: 4em;
+}
+
+/*experience images*/
+.edu-responsive
+{
+	width: 200px;
+	height: 200px;
+}
+
+/*buttons class to float them on the right of the screen*/
+.buttons
+{
+	float: right;
+}
+
+/*footer*/
+.footer-col
+{
+	margin-top:5%;
+}
+
+/*styling heading elements etc*/
+h2
+{
+	font-weight: 200;
+}
+
+p 
+{
+	padding-bottom: 1em;
+}
+
+a 
+{
+	color: rgba(252,125,0,1);
+	text-decoration: none;
+}
+
+/*class for skills, honors and interests lists in the skills section*/
+.list
+{
+	padding: 1em;
+}
+
+.list p
+{
+	padding: 0;
+}
+/*list bullets inside the container*/
+.list ul
+{
+	list-style: none;
+}
+
+.list ul li:before 
+{
+	list-style:none;
+}
+
+/*for non mobile devices, arrange columns in this way*/
+@media (min-width: 48rem) 
+{
+
+	.column 
+	{
+		float: left;
+		margin: 0;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.column.full 
+	{ 
+		width: 100%; 
+	}
+    .column.half 
+	{ 
+		width: 50%; 
+	}
+    .column.two-thirds 
+	{ 
+		width: 66.7%; 
+	}
+	.column.third 
+	{ 
+		width: 33.3%; 
+	}
+
+}
+
+/* wrapper class for wrapping content and controlling positioning*/
+.container 
+{
+	display: block;
+	margin: 0 auto;
+	width: 85%;	
+}
+
+#experience
+{
+	padding-bottom: 4em;
+}
+
+p
+{
+    float:left;
+    width:100%;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #E5E5E5;
+    width: 200px;
+    color: #999999;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;     
+	float:right;
+}
+
+textarea {
+    width: 250px;
+    height: 150px;
+    max-width: 400px;
+    line-height: 18px;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+    border-color: 1px solid #C9C9C9;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px; 
+}
+
+.form label {
+    margin-left: 50px;
+    color: #999999;
+    float:right;
+    margin-top:10px;
+}
+
+.submit input {
+    width: 100px; 
+    height: 40px;
+    background-color: #474E69; 
+    color: #FFF;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;     
+}
+
+.fa.fa-facebook-square, .fa.fa-linkedin-square
+{
+	font-size: 30px;
+	padding: 4px;
+	color: #3D373A;
+}
+
+
+/*clear class to prevent cluttering html with empty clear divs
+(used for separating elements)*/
+.clear 
+{
+	display: block;	
+}
+	
+.clear:after
+{
+	display: block;
+	clear: both;
+	content: ".";
+	height: 1px;
+	visibility: hidden;
+}
