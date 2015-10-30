@@ -9,8 +9,8 @@ function smoothScroller(elem)
 	//the position of the scrollbar on the page
 	var curYPos = window.pageYOffset;
 	
-	//the position you want the function to scroll to (-58 to account for the size of the navbar)
-	var dest = document.getElementById(elem).offsetTop - 58;
+	//the position you want the function to scroll to (-80 to account for the size of the navbar)
+	var dest = document.getElementById(elem).offsetTop - 80;
 	
 	//variable to find the bottom of the page
 	var pageHeight = document.offsetHeight;
@@ -27,6 +27,7 @@ function smoothScroller(elem)
 	if(yPos > pageHeight)
 	{
 		clearTimeout(animate);
+		console.log(yPos);
 	} 
 	else if(curYPos < dest - dist)
 	{
@@ -55,10 +56,10 @@ window.onscroll = function staticNavBar(){
 	
 	//if we are before the positon of the banner element leave navbar as 'firstheader'
 	if(curYPos < document.getElementById("banner").clientHeight){
-		document.getElementById("navbar").className = "firstheader";
+		document.getElementById("nav").className = "firstheader";
 	//if we go past the banner then change navbar class to the fixed nav bar
 	}else{
-		document.getElementById("navbar").className = "fixed";
+		document.getElementById("nav").className = "fixed";
 	}
 }
 

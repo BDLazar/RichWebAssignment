@@ -65,7 +65,6 @@ nav
 	line-height: 4rem;
 	display: block;
 	width: 100%;
-	text-transform: uppercase;
 }
 
 /*navigation bar styling*/
@@ -79,6 +78,12 @@ nav ul
 nav  ul  li
 {
 	display: inline-block;
+}
+
+/*nav bar that is visible at top of page, becomes fixed when scrolling down*/
+nav.firstheader
+{
+	position: absolute;
 }
 
 /*list item links ie, navbar buttons, slightly transparent white*/
