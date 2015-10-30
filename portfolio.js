@@ -9,8 +9,8 @@ function smoothScroller(elem)
 	//the position of the scrollbar on the page
 	var curYPos = window.pageYOffset;
 	
-	//the position you want the function to scroll to (-56 to account for the size of the navbar)
-	var dest = document.getElementById(elem).offsetTop - 56;
+	//the position you want the function to scroll to (-58 to account for the size of the navbar)
+	var dest = document.getElementById(elem).offsetTop - 58;
 	
 	//variable to find the bottom of the page
 	var pageHeight = document.offsetHeight;
