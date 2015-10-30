@@ -114,11 +114,6 @@ nav ul li.logo a
 	}
 }
 
-#experience
-{
-	padding-bottom: 4em;
-}
-
 /*experience images*/
 .edu-responsive
 {
@@ -155,7 +150,7 @@ a
 	text-decoration: none;
 }
 
-/*class for skills, honors and interests lists in the skills section*/
+/*class for skills, awards and interests lists in the skills section*/
 .list
 {
 	padding: 1em;
@@ -238,7 +233,7 @@ input, textarea {
 }
 
 textarea {
-    width: 250px;
+    width: 200px;
     height: 150px;
     max-width: 400px;
     line-height: 18px;
