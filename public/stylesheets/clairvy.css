@@ -299,7 +299,7 @@ strong
   .main-container {
     height: 100%;
     width: 100%;
-    padding-top: 15%;
+ 
   }
   
   .btn-tic-tac-toe{
@@ -341,8 +341,6 @@ md-toolbar
   background-color: white;
   position: fixed;
   z-index: -1;
-  -webkit-box-shadow: 0 1px 8px rgba(0,0,0,.3);
-  box-shadow: 0 1px 8px rgba(0,0,0,.3);
 }
 .sticky
 {
@@ -379,3 +377,8 @@ md-toast.md-error-toast-theme
     font-weight: bold;
 }
 
+md-toast.md-success-toast-theme {
+    background-color: #34495e;
+    text-align: center;
+    font-weight: bold;
+}
