@@ -1,0 +1,35 @@
+
+<div flex>
+	<header class="content-image-container" layout-align="center center" layout="column">
+		<h1 class="pure-splash-head white text-center">Let's have fun &nbsp;&#9786;</h1>
+		<br/>
+		<div layout="column" layout-align="center center" layout-margin  layout-padding>
+			<div flex class="form-container">
+				<md-whiteframe class="shadow text-left">
+					<md-content md-theme="docs-dark" class="md-padding shadow" layout="column" layout-sm="column">
+						<form method="post" ng-submit="login()" name="loginForm">
+							<!--Username-->
+							<md-input-container flex>
+								<label>Username</label>
+								<input ng-model="userName" name="username" required>
+							</md-input-container>
+							
+							<!--Password-->
+							<md-input-container flex>
+								<label>Password</label>
+								<input ng-model="password" name="password" type="password" required>
+							</md-input-container>
+							
+							<!--Need an account-->
+							<div class="text-center">
+								<md-button type="submit" ng-disabled="loginForm.$invalid" class="button" ><b>Login</b>
+								</md-button>
+								<h3 class="text-center">Need an account? <a href="/signup" style="text-decoration:none;" class="green">Create an account now</a></h3>
+							</div>
+						</form>
+					</md-content>
+				</md-whiteframe>
+			</div>
+		</div>
+	</header>
+</div>

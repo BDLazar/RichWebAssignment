@@ -1,0 +1,127 @@
+<md-content ng-if="!isAuthenticated()" md-theme="docs-dark" class="md-padding shadow" layout="column" layout-sm="column">
+	<div flex>
+		<header class="content-image-container" layout="column">
+			<section class="content" style="margin-top: 20%;">
+				<!--Logo-->
+				<div>
+					<h1 class="pure-splash-head">
+						<span class="logo"><span style="color:#ffbf00">Tic Tac Toe</span></span>
+						<br/><br/>
+					</h1>
+				</div>
+				
+				<div layout="column" layout-align="center center" layout-margin  layout-padding>
+					<!--Login-->
+					<div flex>
+						<md-button ng-href="/signin" ng-click="close()" class = "button"><b>LOGIN</b>
+						</md-button>
+					</div>
+					
+					<!--Register-->
+					<div flex>
+						<md-button ng-href="/signup" ng-click="close()" class = "button"><b>REGISTER</b>
+						</md-button>
+					</div>
+				</div>
+			</section>
+		</header>
+	</div>
+</md-content>
+
+<div class="main-container text-center" layout="column" ng-if="isAuthenticated()">
+    <br/><br/><br/><br/><br/>
+    <h1 class="pure-splash-head">Welcome &nbsp;<span class="green">{{user.user_name | uppercase}}</span>&nbsp;&#9786;</h1>
+    <div layout="column" layout-align="center center" layout-margin  layout-padding>
+		<!--Start game button-->
+		<div flex>
+			<md-button ng-href="/games"  class="button"><b>START GAME</b>
+			</md-button>
+		</div>
+    </div>
+	
+	<div layout="row"  layout-sm="column" layout-margin layout-fill layout-padding>
+		<md-whiteframe class="shadow info-box">
+			<md-content md-theme="docs-dark" class="md-padding" layout="column" layout-sm="column">
+				<div layout="row" layout-margin layout-fill layout-padding>
+					<div flex>
+						<!--Game status-->
+						<h2 class="text-center pure-splash-subhead underline-red">
+						  <span class="black">Game Stats</span>
+						</h2>
+						<br/>
+						
+						<!--If you didnt play any game, score is O-->
+						<div ng-if="user.score.total_match == 0">
+							<h2>You haven't played any game yet.</h2>
+						</div>
+						
+						<div ng-if="user.score.total_match != 0" layout="column" layout-margin layout-fill layout-padding>
+							<h1 class="pure-splash-head">
+								<i class="ion-podium" style="font-size:128px; height:128px; color:#34495e"></i>
+							</h1>
+						</div>
+						
+						<div ng-if="user.score.total_match != 0" layout="row" layout-margin layout-fill layout-padding>
+							<br/><br/><br/>
+							<!--How many wins-->
+							<div flex>
+								{{user.score.won}} </br>
+								<h2>Wins</h2>
+							</div>
+							
+							<!--How many loses-->
+							<div flex>
+								{{user.score.lost}} <br/>
+								<h2>Loses</h2>
+							</div>
+							
+							
+							<!--How many draws-->
+							<div flex>
+								{{user.score.cat}} <br/>
+								<h2>Draws</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</md-content>
+		</md-whiteframe>
+		
+		<md-whiteframe class="shadow info-box">
+			<md-content md-theme="docs-dark" class="md-padding list-container" layout="column" layout-sm="row">
+				<div layout="row" layout-margin layout-fill layout-padding>
+					<div flex>
+						<!--Recent games-->
+						<h2 class="text-center pure-splash-subhead underline-red">
+							<span class="black ">Recent Games</span>
+						</h2>
+					<br/>
+					<md-content>
+						<!--Games history-->
+						<div ng-if="history.length == 0">
+							<h2>You haven't played any game yet.</h2>
+						 </div>
+						 
+						<div ng-if="history.length != 0">
+							<md-list>
+								<md-list-item class="md-3-line" ng-repeat="game in history | orderBy:'-game_over_date'">
+									<div class="md-list-item-text">
+										<p class="text-center">
+											<b class="black">YOU
+											<span ng-if="game.result =='Lost'"class="red">{{game.result | uppercase}} TO {{ game.opponent | uppercase}}</span>
+											<span ng-if="game.result =='Won'"class="green">{{game.result | uppercase}} {{ game.opponent | uppercase}}</span>
+											<span ng-if="game.result =='Cat'"class="blue">{{game.result  | uppercase}} WITH {{ game.opponent | uppercase}} </span> IN A GAME!</b>
+										</p>
+									</div>
+									<br/>
+									<md-divider ng-if="!$last"></md-divider>
+								</md-list-item>
+							</md-list>
+						</div>
+					</md-content>
+				</div>
+			</md-content>
+		</md-whiteframe>
+	</div>
+	<br/><br/><br/>
+</div>
