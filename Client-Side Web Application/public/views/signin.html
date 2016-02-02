@@ -8,7 +8,8 @@
 				<md-whiteframe class="shadow text-left">
 					<md-content md-theme="docs-dark" class="md-padding shadow" layout="column" layout-sm="column">
 						<form method="post" ng-submit="login()" name="loginForm">
-							<!--Username-->
+							<!--Username
+								When the user enters a username,capital letters are not allowed-->
 							<md-input-container flex>
 								<label>Username</label>
 								<input ng-model="userName" name="username" required>

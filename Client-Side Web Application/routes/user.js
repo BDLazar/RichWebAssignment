@@ -4,6 +4,8 @@ var bcrypt = require('bcryptjs'),
     config = require('../config');
 
 function UserHandler(db) {
+	/*The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+	  With strict mode, you can not, for example, use undeclared variables.*/
   "use strict";
   
   /* MongoDB Schema (USERS)*/
@@ -21,7 +23,6 @@ function UserHandler(db) {
       type: Date,
       default: Date.now
     },
-    about_you: String,
     score: {
       won:{
         type: Number,
@@ -31,6 +32,7 @@ function UserHandler(db) {
         type: Number,
         default:0
       },
+	  /*tie*/
       cat: {
         type: Number,
         default:0
@@ -68,7 +70,7 @@ function UserHandler(db) {
   };
   var User = db.model('User', userSchema);
 
-  /*Generate JSON Web Tokens*/
+  /*Generate JSON Web Tokens for 14 days, as well as 183 days*/
    function createToken(user) {
     var payload = {
       sub: user._id,

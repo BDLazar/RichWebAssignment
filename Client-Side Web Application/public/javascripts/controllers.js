@@ -261,11 +261,11 @@ socketio.on('rdyPlayers',function(players){
     $scope.matched = 1;
     // 2D array board
      $scope.board = [
-            //0,0                        0,1                   0,2
+					//0,0                        0,1                   0,2
        [ { value: emptyCell, id:0 }, { value: emptyCell, id:1 }, { value: emptyCell, id:2 } ],
-            //1,0                        1,1                   1,2
+					//1,0                        1,1                   1,2
        [ { value: emptyCell, id:3 }, { value: emptyCell, id:4 }, { value: emptyCell, id:5 } ],
-            //2,0                        2,1                   2,2
+					//2,0                        2,1                   2,2
        [ { value: emptyCell, id:6 }, { value: emptyCell, id:7 }, { value: emptyCell, id:8 } ]
      ];
      $scope.currentPlayer = {};
@@ -281,6 +281,15 @@ socketio.on('rdyPlayers',function(players){
        if($scope.currentPlayer.Name === $rootScope.user.user_name){
          //correct move
          if (isEndGame() === false) {
+			/*if($scope.currentPlayer.Name === players.player1)
+			{
+				$scope.currentPlayer.Name = players.player2;
+			}
+			else
+			{
+				$scope.currentPlayer.Name = players.player1;
+			}
+			*/
            $scope.currentPlayer.Name = $scope.currentPlayer.Name === players.player1 ? players.player2: players.player1;
 
             // inform  the two players who is the next to go
@@ -317,10 +326,10 @@ socketio.on('rdyPlayers',function(players){
        $scope.winnerDisabled = function(){
          return false;
        };
-       //reset all cell to ?
+       //reset all cell to ''
        _.each($scope.board, function(row) {
          _.each(row, function(cell) {
-           // set cell. value to emptyCell which is '?'
+           // set cell. value to emptyCell which is ''
            cell.value = emptyCell;
          });
        });

@@ -1,3 +1,7 @@
+/*This module is a container for the different parts of my app (controllers, directives, services)
+  The reference to myFirstApp module can be found in master.html (<html ng-app='myFirstApp'>)
+  The array is the list of modules myFirstApp depends on
+*/
 var myFirstApp = angular.module('myFirstApp', ['ngMaterial', 'ngSanitize', 'ngAnimate', 'satellizer', 'ngResource', 'ui.router', 'ngMessages', 'angular-loading-bar']).
 config(['$stateProvider', '$urlRouterProvider', '$authProvider', '$locationProvider', '$mdThemingProvider', 'cfpLoadingBarProvider',  function($stateProvider, $urlRouterProvider, $authProvider, $locationProvider, $mdThemingProvider, cfpLoadingBarProvider) {
 

@@ -1,0 +1,30 @@
+The Tic Tac Toe application is deployed on Heroku at the following link: 
+	
+	https://thawing-wave-7967.herokuapp.com/ 
+	
+	
+	
+If the user wants to run the application locally, below are the steps in order to accomplish this: 
+	
+
+**Step 1** : Make sure you have Node.js and Mongodb installed.(follow the guide over here https://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/ and here https://nodejs.org/en/)
+
+**Step 2** : Open your command prompt or Terminal and `cd` to the folder where you store this project and type `npm install` and wait.
+
+**Step 3** : Then type `node app.js`
+
+**Step 4** : Go to http://localhost:3000/ and check the app. 
+
+
+Documentation used:
+- http://learn.mean.io/ 
+- http://socket.io/docs/ 
+- http://code.tutsplus.com/tutorials/introduction-to-the-mean-stack--cms-19918 
+- https://material.angularjs.org/latest/ 
+- https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction 
+
+
+Testing was made on at least 3 different browsers:
+- Chrome
+- Mozilla Firefox
+- Mobile
